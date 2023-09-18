@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="UTF-8">
         <link rel="stylesheet" href="8.css">
+        <meta charset="UTF-8">
         <title>JavaScriptの練習サイト</title>
     </head>
     <body>
        <header>
        </header>
-       <script sr="script.js"></script>
+       <ul>
+       <li id="lists">lists</li>
+       </ul>
+
+       <p>お昼ご飯決める</p>
+
+       <div class="#">
+       <p id="shopA">パスタ</p>
+       <p id="shopB">カレーライス</p>
+       </div>
+       <button onClick="getElement();">要素を取得</button>
+        
+       <p>夕飯候補</p>
+
+       <ul class="shop">
+       <li>パスタ</li>
+       <li>カレーライス</li>
+       <li>ラーメン</li>
+       <li>牛丼</li>
+       <li>寿司</li>
+       </ul>
+       <button onClick="getElement();">要素を取得</button>
+    
+       <script src="script.js"></script>
     </body>
 </html>
