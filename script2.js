@@ -2,37 +2,44 @@ let lists = document.getElementsByClassName("pull-down-list")
 console.log(lists)
 
 const pullDownButton = document.getElementById("lists")
+const pullDownParents = document.getElementById("pull-down")
+
 pullDownButton.addEventListener('mouseover',function(){
-    pullDownButton.setAttribute("style","background-color: blue;");
+    this.setAttribute("style","background-color: blue;")
+    console.log('乗ったら青色')
   })
 
 pullDownButton.addEventListener('mouseout',function(){
-    pullDownButton.setAttribute("style","background-color: red;");
+    this.setAttribute("style","background-color: red;");
   })
 
 pullDownButton.addEventListener('click',function(){
-    pullDownButton.setAttribute("style","background-color: green;");
+  if (pullDownParents.getAttribute("style") == "display:block;"){
+    pullDownParents.removeAttribute("style", "display:block;")
+    console.log("非表示")
+}　else {
+    pullDownParents.setAttribute("style", "display:block;")
+    console.log("表示")
+   }
   })
+
 
 window.addEventListener('load',function(){
 
-    document.getElementById("lists").addEventListener('mouseover',logOn);
     document.getElementById("lists").addEventListener('mouseout',logOff);
     
 })
 
-function logOn(event){
-    console.log("乗る青");
-}
 
 function logOff(event){
     console.log("外れる赤");
 }
 
-
 window.addEventListener('load',function(){
-    document.getElementById("lists").addEventListener('click',function()
-    {console.log("クリック緑");
+    document.getElementById("lists").addEventListener('click',function(){
+    console.log("クリック緑"); 
 });
 });
+
+
 
